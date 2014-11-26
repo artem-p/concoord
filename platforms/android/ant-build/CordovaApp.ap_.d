@@ -40,6 +40,7 @@ D:\work\developing\projects\concoord\platforms\android\assets\www\css\index.css 
 D:\work\developing\projects\concoord\platforms\android\assets\www\img\logo.png \
 D:\work\developing\projects\concoord\platforms\android\assets\www\js\index.js \
 D:\work\developing\projects\concoord\platforms\android\assets\www\lib\jquery-2.1.1.min.js \
+D:\work\developing\projects\concoord\platforms\android\assets\www\lib\jquery.numeric.min.js \
 D:\work\developing\projects\concoord\platforms\android\assets\www\lib\ratchet \
 D:\work\developing\projects\concoord\platforms\android\assets\www\lib\ratchet\css \
 D:\work\developing\projects\concoord\platforms\android\assets\www\lib\ratchet\fonts \

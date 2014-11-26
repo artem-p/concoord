@@ -22,6 +22,15 @@ function onLoad() {
     btnLat.click(toggleLat);
     btnLon.click(toggleLon);
 
+    tvGeoLatDeg.numeric();
+    tvGeoLatDeg.numeric();
+    tvGeoLatMin.numeric();
+    tvGeolatSec.numeric();
+    tvGeoLonDeg.numeric();
+    tvGeoLonMin.numeric();
+    tvGeoLonSec.numeric();
+    tvDecLat.numeric();
+    tvDecLon.numeric();
     document.addEventListener("deviceready", onDeviceReady, false);
 }
 
