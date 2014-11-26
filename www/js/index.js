@@ -9,9 +9,19 @@ var tvGeoLonMin = $('#geoLonMin');
 var tvGeoLonSec = $('#geoLonSec');
 var tvDecLat = $('#decLat');
 var tvDecLon = $('#decLon');
+var btnLat = $('#latButton');
+var btnLon = $('#lonButton');
+
+var NORTH_LAT = 'N';
+var SOUTH_LAT = 'S';
+var WEST_LON = 'W';
+var EAST_LON = 'E';
 
 function onLoad() {
     btnClear.click(clearFields);
+    btnLat.click(toggleLat);
+    btnLon.click(toggleLon);
+
     document.addEventListener("deviceready", onDeviceReady, false);
 }
 
@@ -32,4 +42,22 @@ function clearFields() {
     tvGeoLonSec.val('');
     tvDecLat.val('');
     tvDecLon.val('');
+}
+
+function toggleLat() {
+    //  Переключаем широту с северной на южную и обратно
+    if($.trim(btnLat.html()) == NORTH_LAT) {
+        btnLat.html(SOUTH_LAT);
+    } else {
+        btnLat.html(NORTH_LAT);
+    }
+}
+
+function toggleLon() {
+    //  Переключаем долготу с западной на восточную и обратно
+    if($.trim(btnLon.html()) == EAST_LON) {
+        btnLon.html(WEST_LON);
+    } else {
+        btnLon.html(EAST_LON);
+    }
 }
