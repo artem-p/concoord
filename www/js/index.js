@@ -17,6 +17,19 @@ var SOUTH_LAT = 'S';
 var WEST_LON = 'W';
 var EAST_LON = 'E';
 
+var coordModel = {
+    dmsLatDeg: ko.observable(),
+    dmsLatMin: ko.observable(),
+    dmsLatSec: ko.observable(),
+    dmsLonDeg: ko.observable(),
+    dmsLonMin: ko.observable(),
+    dmsLonSec: ko.observable(),
+    decLat: ko.observable(),
+    decLon: ko.observable()
+}
+
+ko.applyBindings(coordModel);
+
 function onLoad() {
     btnClear.click(clearFields);
     btnLat.click(toggleLat);
@@ -43,14 +56,23 @@ function onDeviceReady() {
 
 function clearFields() {
     //  Сбрасываем все поля
-    tvGeoLatDeg.val('');
-    tvGeoLatMin.val('');
-    tvGeolatSec.val('');
-    tvGeoLonDeg.val('');
-    tvGeoLonMin.val('');
-    tvGeoLonSec.val('');
-    tvDecLat.val('');
-    tvDecLon.val('');
+    coordModel.dmsLatDeg('');
+    coordModel.dmsLatMin('');
+    coordModel.dmsLatSec('');
+    coordModel.dmsLonDeg('');
+    coordModel.dmsLonMin('');
+    coordModel.dmsLonSec('');
+    coordModel.decLat('');
+    coordModel.decLon('');
+
+    //tvGeoLatDeg.val('');
+    //tvGeoLatMin.val('');
+    //tvGeolatSec.val('');
+    //tvGeoLonDeg.val('');
+    //tvGeoLonMin.val('');
+    //tvGeoLonSec.val('');
+    //tvDecLat.val('');
+    //tvDecLon.val('');
 }
 
 function toggleLat() {

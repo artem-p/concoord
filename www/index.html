@@ -38,7 +38,7 @@
         <div class="content">
             <div class="coord-input">
                 <div class='inline-input'>
-                    <input id="geoLatDeg" size=1 type="text" placeholder="гр">
+                    <input id="geoLatDeg" size=1 type="text" placeholder="гр" data-bind="textInput: dmsLatDeg">
 
                 </div>
                 <div class='inline-label'>
@@ -46,14 +46,14 @@
                 </div>
 
                 <div class='inline-input'>
-                    <input id="geoLatMin" size=1 class="geoCoordInput" type="text" placeholder="мин">
+                    <input id="geoLatMin" size=1 type="text" placeholder="мин" data-bind="textInput: dmsLatMin">
                 </div>
                 <div class='inline-label'>
                     <label>'</label>
                 </div>
 
                 <div class='inline-input' >
-                    <input id="geoLatSec" size=1 type="text" placeholder="с">
+                    <input id="geoLatSec" size=1 type="text" placeholder="с" data-bind="textInput: dmsLatSec">
                 </div>
                 <div class='inline-label'>
                     <label>"</label>
@@ -65,7 +65,7 @@
 
             <div class="coord-input">
                 <div class='inline-input'>
-                    <input id="geoLonDeg" size=1 type="text" placeholder="гр">
+                    <input id="geoLonDeg" size=1 type="text" placeholder="гр" data-bind="textInput: dmsLonDeg">
 
                 </div>
                 <div class='inline-label'>
@@ -73,14 +73,14 @@
                 </div>
 
                 <div class='inline-input'>
-                    <input id="geoLonMin" size=1 type="text" placeholder="мин">
+                    <input id="geoLonMin" size=1 type="text" placeholder="мин" data-bind="textInput: dmsLonMin">
                 </div>
                 <div class='inline-label'>
                     <label>'</label>
                 </div>
 
                 <div class='inline-input' >
-                    <input id="geoLonSec" size=1 type="text" placeholder="с">
+                    <input id="geoLonSec" size=1 type="text" placeholder="с" data-bind="textInput: dmsLonSec">
                 </div>
                 <div class='inline-label'>
                     <label>"</label>
@@ -112,7 +112,7 @@
                 </div>
                 <div class='inline-input'>
 
-                    <input id="decLat" size=5 type="text" placeholder="гр">
+                    <input id="decLat" size=5 type="text" placeholder="гр" data-bind="textInput: decLat">
                 </div>
                 <div class='inline-label'>
                     <label>°</label>
@@ -124,7 +124,7 @@
                     <label>долг</label>
                 </div>
                 <div class="inline-input">
-                    <input id="decLon" size=5 type="text" placeholder="гр">
+                    <input id="decLon" size=5 type="text" placeholder="гр" data-bind="textInput: decLon">
                 </div>
                 <div class='inline-label'>
                     <label>°</label>
@@ -140,6 +140,7 @@
         </div>
         <script src="lib/jquery-2.1.1.min.js" type="text/javascript"></script>
         <script src="lib/jquery.numeric.min.js" type="text/javascript"></script>
+        <script src="lib/knockout-3.2.0.js" type="text/javascript"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
