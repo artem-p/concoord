@@ -1,12 +1,12 @@
 // Wait for device API libraries to load
 //
 var btnClear = $('#btnClear');
-var tvGeoLatDeg = $('#geoLatDeg');
-var tvGeoLatMin = $('#geoLatMin');
-var tvGeolatSec = $('#geoLatSec');
-var tvGeoLonDeg = $('#geoLonDeg');
-var tvGeoLonMin = $('#geoLonMin');
-var tvGeoLonSec = $('#geoLonSec');
+var tvDmsLatDeg = $('#geoLatDeg');
+var tvDmsLatMin = $('#geoLatMin');
+var tvDmslatSec = $('#geoLatSec');
+var tvDmsLonDeg = $('#geoLonDeg');
+var tvDmsLonMin = $('#geoLonMin');
+var tvDmsLonSec = $('#geoLonSec');
 var tvDecLat = $('#decLat');
 var tvDecLon = $('#decLon');
 var btnLat = $('#latButton');
@@ -35,13 +35,12 @@ function onLoad() {
     btnLat.click(toggleLat);
     btnLon.click(toggleLon);
 
-    tvGeoLatDeg.numeric();
-    tvGeoLatDeg.numeric();
-    tvGeoLatMin.numeric();
-    tvGeolatSec.numeric();
-    tvGeoLonDeg.numeric();
-    tvGeoLonMin.numeric();
-    tvGeoLonSec.numeric();
+    tvDmsLatDeg.numeric();
+    tvDmsLatMin.numeric();
+    tvDmslatSec.numeric();
+    tvDmsLonDeg.numeric();
+    tvDmsLonMin.numeric();
+    tvDmsLonSec.numeric();
     tvDecLat.numeric();
     tvDecLon.numeric();
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -53,6 +52,10 @@ function onDeviceReady() {
 
     //alert('ready');
 }
+
+tvDmsLatDeg.on('input', function(){
+    console.log('input');
+});
 
 function clearFields() {
     //  Сбрасываем все поля
