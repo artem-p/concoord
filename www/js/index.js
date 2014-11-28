@@ -17,6 +17,19 @@ var SOUTH_LAT = 'S';
 var WEST_LON = 'W';
 var EAST_LON = 'E';
 
+var DMS_LAT_DEG_MAX = 90;
+var DMS_LAT_DEG_MIN = -90;
+var DMS_LON_DEG_MAX = 180;
+var DMS_LON_DEG_MIN = -180;
+
+var DMS_MIN_SEC_MIN = 0;
+var DMS_MIN_SEC_MAX = 60;
+
+var DEC_LAT_MIN = DMS_LAT_DEG_MIN;
+var DEC_LAT_MAX = DMS_LAT_DEG_MAX;
+var DEC_LON_MIN = DMS_LON_DEG_MIN;
+var DEC_LON_MAX = DMS_LON_DEG_MAX;
+
 var coordModel = {
     dmsLatDeg: ko.observable(),
     dmsLatMin: ko.observable(),
@@ -56,6 +69,52 @@ function onDeviceReady() {
 tvDmsLatDeg.on('input', function(){
     console.log('input');
 });
+
+function isRightDmsLatDeg(inDmsLatDeg) {
+    //  Проверяем входное значение градуса широты ГМС
+    if(DMS_LAT_DEG_MIN <= inDmsLatDeg && inDmsLatDeg <=DMS_LAT_DEG_MAX) {
+        return true;
+    } else {
+        return false;
+    }
+
+
+}
+
+function isRightDmsLonDeg(inDmsLonDeg) {
+
+    if(DMS_LON_DEG_MIN <= inDmsLonDeg && inDmsLonDeg <= DMS_LON_DEG_MAX) {
+        return true;
+    } else {
+        return false;
+    }
+
+
+}
+
+function isRightDmsMinuteSecond(inDmsMinuteSecond) {
+    if(DMS_MIN_SEC_MIN <= inDmsMinuteSecond && inDmsMinuteSecond <= DMS_MIN_SEC_MAX) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isRightDecLat(inDecLat) {
+    if(DEC_LAT_MIN <= inDecLat && inDecLat<=DEC_LAT_MAX) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isRightDecLon(inDecLon) {
+    if(DEC_LON_MIN <= inDecLon && inDecLon <= DEC_LON_MAX) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 function clearFields() {
     //  Сбрасываем все поля
