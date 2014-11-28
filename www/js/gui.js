@@ -46,64 +46,34 @@ function prepareGui() {
     tvDecLon.numeric();
 }
 
-tvDmsLatDeg.on('input', function(){
-    var dmsLatDeg = $(this).val();
-    if(!isRightDmsLatDeg(dmsLatDeg)) {
+tvDmsLatDeg.on('input', null, {'min':DMS_LAT_DEG_MIN, 'max': DMS_LAT_DEG_MAX}, highlightWrongCoord
+
+);
+
+
+function highlightWrongCoord(event) {
+
+      //Подсвечиваем красным неверные значения координат
+    var coord = $(this).val();
+    var borderVals = event.data;
+    if(!isRightCoord(coord, borderVals.min, borderVals.max)) {
         //  Подсвечиваем красным
         $(this).css('color', 'red');
     } else {
         //  Убираем красный
         $(this).css('color', 'black');
     }
-
-
-});
-
-function isRightDmsLatDeg(inDmsLatDeg) {
-    //  Проверяем входное значение градуса широты ГМС
-    if(DMS_LAT_DEG_MIN <= inDmsLatDeg && inDmsLatDeg <=DMS_LAT_DEG_MAX) {
-        return true;
-    } else {
-        return false;
-    }
-
-
 }
 
-function isRightDmsLonDeg(inDmsLonDeg) {
-
-    if(DMS_LON_DEG_MIN <= inDmsLonDeg && inDmsLonDeg <= DMS_LON_DEG_MAX) {
-        return true;
-    } else {
-        return false;
-    }
-
-
-}
-
-function isRightDmsMinuteSecond(inDmsMinuteSecond) {
-    if(DMS_MIN_SEC_MIN <= inDmsMinuteSecond && inDmsMinuteSecond <= DMS_MIN_SEC_MAX) {
+function isRightCoord(inCoord, inMinVal, inMaxVal) {
+    if(inMinVal <= inCoord && inCoord <= inMaxVal) {
         return true;
     } else {
         return false;
     }
 }
 
-function isRightDecLat(inDecLat) {
-    if(DEC_LAT_MIN <= inDecLat && inDecLat<=DEC_LAT_MAX) {
-        return true;
-    } else {
-        return false;
-    }
-}
 
-function isRightDecLon(inDecLon) {
-    if(DEC_LON_MIN <= inDecLon && inDecLon <= DEC_LON_MAX) {
-        return true;
-    } else {
-        return false;
-    }
-}
 
 function clearFields() {
     //  Сбрасываем все поля
