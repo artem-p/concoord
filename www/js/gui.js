@@ -46,23 +46,32 @@ function prepareGui() {
     tvDecLon.numeric();
 }
 
-tvDmsLatDeg.on('input', null, {'min':DMS_LAT_DEG_MIN, 'max': DMS_LAT_DEG_MAX}, highlightWrongCoord
+tvDmsLatDeg.on('input', {'min':DMS_LAT_DEG_MIN, 'max': DMS_LAT_DEG_MAX}, highlightWrongCoord);
+tvDmsLatMin.on('input',{'min':DMS_MIN_SEC_MIN, 'max':DMS_MIN_SEC_MAX }, highlightWrongCoord);
+tvDmslatSec.on('input',{'min':DMS_MIN_SEC_MIN, 'max':DMS_MIN_SEC_MAX }, highlightWrongCoord);
+tvDmsLonDeg.on('input',{'min':DMS_LON_DEG_MIN, 'max': DMS_LON_DEG_MAX}, highlightWrongCoord);
+tvDmsLonMin.on('input',{'min':DMS_MIN_SEC_MIN, 'max':DMS_MIN_SEC_MAX }, highlightWrongCoord);
+tvDmsLonSec.on('input',{'min':DMS_MIN_SEC_MIN, 'max':DMS_MIN_SEC_MAX }, highlightWrongCoord);
+tvDecLat.on('input',{'min':DEC_LAT_MIN, 'max':DEC_LAT_MAX }, highlightWrongCoord);
+tvDecLon.on('input',{'min':DEC_LON_MIN, 'max':DEC_LON_MAX }, highlightWrongCoord);
 
-);
 
 
 function highlightWrongCoord(event) {
 
       //Подсвечиваем красным неверные значения координат
     var coord = $(this).val();
-    var borderVals = event.data;
-    if(!isRightCoord(coord, borderVals.min, borderVals.max)) {
-        //  Подсвечиваем красным
-        $(this).css('color', 'red');
-    } else {
-        //  Убираем красный
-        $(this).css('color', 'black');
+    if(coord != '-') {  //  Один минус подсвечивать не надо
+        var borderVals = event.data;
+        if(!isRightCoord(coord, borderVals.min, borderVals.max)) {
+            //  Подсвечиваем красным
+            $(this).css('color', 'red');
+        } else {
+            //  Убираем красный
+            $(this).css('color', 'black');
+        }
     }
+
 }
 
 function isRightCoord(inCoord, inMinVal, inMaxVal) {
