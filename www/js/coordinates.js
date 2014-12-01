@@ -41,5 +41,22 @@ function dmsToDec() {
 }
 
 function decToDms() {
-    console.log('decToDms');
+    //  Читаем данные из модели
+    var decLat = coordModel.decLat();
+    var decLon = coordModel.decLon();
+
+    //  Преобразуем
+    var sDmsLat = geolib.decimal2sexagesimal(decLat);
+    var sDmsLon = geolib.decimal2sexagesimal(decLon);
+
+    //console.log(sDmsLat);
+    //console.log(sDmsLon);
+
+    //  Получаем символьное обозначение (N, S, W, E)
+    var cLat, cLon;
+    decLat > 0 ? cLat = "N" : cLat = "S";
+    decLon > 0 ? cLon = "E" : cLon = "W";
+    console.log(cLat);
+    btnLat.html(cLat);
+    btnLon.html(cLon);
 }
