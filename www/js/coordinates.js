@@ -13,3 +13,33 @@ var DEC_LAT_MIN = DMS_LAT_DEG_MIN;
 var DEC_LAT_MAX = DMS_LAT_DEG_MAX;
 var DEC_LON_MIN = DMS_LON_DEG_MIN;
 var DEC_LON_MAX = DMS_LON_DEG_MAX;
+
+function dmsToDec() {
+    //  Читаем данные из модели
+    var dmsLatDeg = coordModel.dmsLatDeg();
+    var dmsLatMin = coordModel.dmsLatMin();
+    var dmsLatSec = coordModel.dmsLatSec();
+    var dmsLonDeg = coordModel.dmsLonDeg();
+    var dmsLonMin = coordModel.dmsLonMin();
+    var dmsLonSec = coordModel.dmsLonSec();
+
+    var latChar = $.trim(btnLat.html());
+    var lonChar = $.trim(btnLon.html());
+
+    //  Формируем строку нужного формата для преобразования
+    var sDmsLat = dmsLatDeg + "° " + dmsLatMin + "' " + dmsLatSec + '" ' + latChar;
+    var sDmsLon = dmsLonDeg + "° " + dmsLonMin + "' " + dmsLonSec + '" ' + lonChar;
+
+    //  Преобразуем
+    var decLat = geolib.sexagesimal2decimal(sDmsLat);
+    var decLon = geolib.sexagesimal2decimal(sDmsLon);
+
+    //  Обновляем модель
+    coordModel.decLat(decLat);
+    coordModel.decLon(decLon);
+
+}
+
+function decToDms() {
+    console.log('decToDms');
+}

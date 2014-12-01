@@ -119,10 +119,3 @@ function toggleLon() {
 btnDmsToDec.click(dmsToDec);
 btnDecToDms.click(decToDms);
 
-function dmsToDec() {
-    console.log('dmsToDec');
-}
-
-function decToDms() {
-    console.log('decToDms');
-}
