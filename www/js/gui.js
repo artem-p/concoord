@@ -12,6 +12,8 @@ var tvDecLat = $('#decLat');
 var tvDecLon = $('#decLon');
 var btnLat = $('#latButton');
 var btnLon = $('#lonButton');
+var btnDmsToDec = $('#dmsToDec');
+var btnDecToDms = $('#decToDms');
 
 var NORTH_LAT = 'N';
 var SOUTH_LAT = 'S';
@@ -112,4 +114,15 @@ function toggleLon() {
     } else {
         btnLon.html(EAST_LON);
     }
+}
+
+btnDmsToDec.click(dmsToDec);
+btnDecToDms.click(decToDms);
+
+function dmsToDec() {
+    console.log('dmsToDec');
+}
+
+function decToDms() {
+    console.log('decToDms');
 }
