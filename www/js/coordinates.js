@@ -49,14 +49,31 @@ function decToDms() {
     var sDmsLat = geolib.decimal2sexagesimal(decLat);
     var sDmsLon = geolib.decimal2sexagesimal(decLon);
 
-    //console.log(sDmsLat);
-    //console.log(sDmsLon);
+    var dmsLat = parseDmsString(sDmsLat);
+    var dmsLon = parseDmsString(sDmsLon);
+
+    //  Заполняем модель значениями
+    coordModel.dmsLatDeg(dmsLat.deg);
+    coordModel.dmsLatMin(dmsLat.min);
+    coordModel.dmsLatSec(dmsLat.sec);
+    coordModel.dmsLonDeg(dmsLon.deg);
+    coordModel.dmsLonMin(dmsLon.min);
+    coordModel.dmsLonSec(dmsLon.sec);
 
     //  Получаем символьное обозначение (N, S, W, E)
     var cLat, cLon;
     decLat > 0 ? cLat = "N" : cLat = "S";
     decLon > 0 ? cLon = "E" : cLon = "W";
-    console.log(cLat);
     btnLat.html(cLat);
     btnLon.html(cLon);
+}
+
+function parseDmsString(inDmsString) {
+    //  Разбираем строку вида 12° 15' 36"
+    var dmsArray = inDmsString.split((/[°'"]/));
+    var dms = {};
+    dms.deg = dmsArray[0].indexOf('NaN') == -1 ? dmsArray[0] : 0;
+    dms.min = dmsArray[1].indexOf('NaN') == -1 ? dmsArray[1] : 0;
+    dms.sec = dmsArray[2].indexOf('NaN') == -1 ? dmsArray[2] : 0;
+    return dms;
 }
