@@ -1,6 +1,7 @@
 /**
  * Created by IRAM on 29.11.2014.
  */
+"use strict";
 var btnClear = $('#btnClear');
 var tvDmsLatDeg = $('#geoLatDeg');
 var tvDmsLatMin = $('#geoLatMin');
@@ -29,7 +30,7 @@ var coordModel = {
     dmsLonSec: ko.observable(),
     decLat: ko.observable(),
     decLon: ko.observable()
-}
+};
 
 ko.applyBindings(coordModel);
 
