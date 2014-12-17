@@ -16,13 +16,15 @@ var DEC_LON_MAX = DMS_LON_DEG_MAX;
 
 function dmsToDec() {
     //  Читаем данные из модели
-    var dmsLatDeg = coordModel.dmsLatDeg();
-    var dmsLatMin = coordModel.dmsLatMin();
-    var dmsLatSec = coordModel.dmsLatSec();
-    var dmsLonDeg = coordModel.dmsLonDeg();
-    var dmsLonMin = coordModel.dmsLonMin();
-    var dmsLonSec = coordModel.dmsLonSec();
-
+    console.log(coordModel.dmsLatMin());
+    var dmsLatDeg = coordModel.dmsLatDeg() != undefined && coordModel.dmsLatDeg() != "" ? coordModel.dmsLatDeg() : 0;
+    var dmsLatMin = coordModel.dmsLatMin() != undefined && coordModel.dmsLatMin() != "" ? coordModel.dmsLatMin() : 0;
+    var dmsLatSec = coordModel.dmsLatSec() != undefined && coordModel.dmsLatSec() != "" ? coordModel.dmsLatSec() : 0;
+    var dmsLonDeg = coordModel.dmsLonDeg() != undefined && coordModel.dmsLonDeg() != "" ? coordModel.dmsLonDeg() : 0;
+    var dmsLonMin = coordModel.dmsLonMin() != undefined && coordModel.dmsLonMin() != "" ? coordModel.dmsLonMin() : 0;
+    var dmsLonSec = coordModel.dmsLonSec() != undefined && coordModel.dmsLonSec() != "" ? coordModel.dmsLonSec() : 0;
+    console.log(dmsLatMin);
+    
     var latChar = $.trim(btnLat.html());
     var lonChar = $.trim(btnLon.html());
 
