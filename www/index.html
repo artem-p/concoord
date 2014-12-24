@@ -40,27 +40,27 @@
         <div class="content">
             <div class="coord-input">
                 <div class='inline-input'>
-                    <input id="geoLatDeg" size=1 type="text" placeholder="гр" data-bind="textInput: dmsLatDeg">
-
+                     <input class="coord-input-field" id="geoLatDeg" type="text" placeholder="гр" data-bind="textInput: dmsLatDeg">
                 </div>
+
                 <div class='inline-label'>
                     <label>°</label>
                 </div>
 
                 <div class='inline-input'>
-                    <input id="geoLatMin" size=1 type="text" placeholder="мин" data-bind="textInput: dmsLatMin">
+                    <input class="coord-input-field" id="geoLatMin"  type="text" placeholder="мин" data-bind="textInput: dmsLatMin">
                 </div>
                 <div class='inline-label'>
                     <label>'</label>
                 </div>
 
                 <div class='inline-input' >
-                    <input id="geoLatSec" size=1 type="text" placeholder="с" data-bind="textInput: dmsLatSec">
+                    <input class="coord-input-field" id="geoLatSec" type="text" placeholder="с" data-bind="textInput: dmsLatSec">
                 </div>
                 <div class='inline-label'>
                     <label>"</label>
                 </div>
-                <div class='inline-input'>
+                <div class='inline-button'>
                     <button class="btn btn-positive" id="latButton">
                         N
                     </button>
@@ -70,7 +70,7 @@
 
             <div class="coord-input">
                 <div class='inline-input'>
-                    <input id="geoLonDeg" size=1 type="text" placeholder="гр" data-bind="textInput: dmsLonDeg">
+                    <input class="coord-input-field" id="geoLonDeg" type="text" placeholder="гр" data-bind="textInput: dmsLonDeg">
 
                 </div>
                 <div class='inline-label'>
@@ -78,19 +78,19 @@
                 </div>
 
                 <div class='inline-input'>
-                    <input id="geoLonMin" size=1 type="text" placeholder="мин" data-bind="textInput: dmsLonMin">
+                    <input class="coord-input-field" id="geoLonMin" type="text" placeholder="мин" data-bind="textInput: dmsLonMin">
                 </div>
                 <div class='inline-label'>
                     <label>'</label>
                 </div>
 
                 <div class='inline-input' >
-                    <input id="geoLonSec" size=1 type="text" placeholder="с" data-bind="textInput: dmsLonSec">
+                    <input class="coord-input-field" id="geoLonSec" type="text" placeholder="с" data-bind="textInput: dmsLonSec">
                 </div>
                 <div class='inline-label'>
                     <label>"</label>
                 </div>
-                <div class='inline-input'>
+                <div class='inline-button'>
                     <button class="btn btn-positive" id="lonButton">
                         E
                     </button>
@@ -99,13 +99,13 @@
             </div>
 
             <div>
-                <div class='inline-input'>
+                <div class='inline-button'>
                     <button class="btn btn-positive icon icon-down" id="dmsToDec">
                     </button>
 
                 </div>
 
-                <div class='inline-input'>
+                <div class='inline-button'>
                     <button class="btn btn-positive icon icon-up" id="decToDms">
                     </button>
 
@@ -114,26 +114,26 @@
             <br>
             <div class="coord-input">
                 <div class="inline-label">
-                    <label>шир.</label>
+                    <label style="font-size: 2.0em">шир.</label>
                 </div>
-                <div class='inline-input'>
+                <div class='inline-input-dec'>
 
-                    <input id="decLat" size=5 type="text" placeholder="гр" data-bind="textInput: decLat">
+                    <input class="coord-input-field" id="decLat" size=7 type="text" placeholder="гр" data-bind="textInput: decLat">
                 </div>
                 <div class='inline-label'>
-                    <label>°</label>
+                    <label style="font-size: 2.0em">°</label>
                 </div>
 
             </div>
-            <div>
+            <div class="coord-input">
                 <div class="inline-label">
-                    <label>долг.</label>
+                    <label style="font-size: 2.0em">долг.</label>
                 </div>
-                <div class="inline-input">
-                    <input id="decLon" size=5 type="text" placeholder="гр" data-bind="textInput: decLon">
+                <div class="inline-input-dec">
+                    <input class="coord-input-field" id="decLon" size=7 type="text" placeholder="гр" data-bind="textInput: decLon">
                 </div>
                 <div class='inline-label'>
-                    <label>°</label>
+                    <label style="font-size: 2.0em">°</label>
                 </div>
             </div>
 
