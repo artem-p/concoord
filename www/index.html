@@ -1,22 +1,4 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
         <meta charset="utf-8" />
@@ -27,7 +9,7 @@
 <!--        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />-->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <title>Coordinates</title>
 
         <link href="lib/ratchet/css/ratchet.css" rel="stylesheet">
         <script src="lib/ratchet/js/ratchet.js"></script>
@@ -40,7 +22,7 @@
         <div class="content">
             <div class="coord-input">
                 <div class='inline-input'>
-                     <input class="coord-input-field" id="geoLatDeg" type="text" placeholder="гр" data-bind="textInput: dmsLatDeg">
+                     <input class="coord-input-field" id="geoLatDeg" type="text" onfocus="(this.type='number')" onblur="(this.type='text')" placeholder="гр" data-bind="textInput: dmsLatDeg">
                 </div>
 
                 <div class='inline-label'>
@@ -48,14 +30,14 @@
                 </div>
 
                 <div class='inline-input'>
-                    <input class="coord-input-field" id="geoLatMin"  type="text" placeholder="мин" data-bind="textInput: dmsLatMin">
+                    <input class="coord-input-field" id="geoLatMin" onfocus="(this.type='number')" onblur="(this.type='text')" type="text" placeholder="мин" data-bind="textInput: dmsLatMin">
                 </div>
                 <div class='inline-label'>
                     <label>'</label>
                 </div>
 
                 <div class='inline-input' >
-                    <input class="coord-input-field" id="geoLatSec" type="text" placeholder="с" data-bind="textInput: dmsLatSec">
+                    <input class="coord-input-field" id="geoLatSec" onfocus="(this.type='number')" onblur="(this.type='text')" type="text" placeholder="с" data-bind="textInput: dmsLatSec">
                 </div>
                 <div class='inline-label'>
                     <label>"</label>
@@ -70,7 +52,7 @@
 
             <div class="coord-input">
                 <div class='inline-input'>
-                    <input class="coord-input-field" id="geoLonDeg" type="text" placeholder="гр" data-bind="textInput: dmsLonDeg">
+                    <input class="coord-input-field" id="geoLonDeg"  type="text" onfocus="(this.type='number')" onblur="(this.type='text')" placeholder="гр" data-bind="textInput: dmsLonDeg">
 
                 </div>
                 <div class='inline-label'>
@@ -78,14 +60,14 @@
                 </div>
 
                 <div class='inline-input'>
-                    <input class="coord-input-field" id="geoLonMin" type="text" placeholder="мин" data-bind="textInput: dmsLonMin">
+                    <input class="coord-input-field" id="geoLonMin" type="text" onfocus="(this.type='number')" onblur="(this.type='text')" placeholder="мин" data-bind="textInput: dmsLonMin"> 
                 </div>
                 <div class='inline-label'>
                     <label>'</label>
                 </div>
 
                 <div class='inline-input' >
-                    <input class="coord-input-field" id="geoLonSec" type="text" placeholder="с" data-bind="textInput: dmsLonSec">
+                    <input class="coord-input-field" id="geoLonSec" type="text" onfocus="(this.type='number')" onblur="(this.type='text')" placeholder="с" data-bind="textInput: dmsLonSec">
                 </div>
                 <div class='inline-label'>
                     <label>"</label>
@@ -118,7 +100,7 @@
                 </div>
                 <div class='inline-input-dec'>
 
-                    <input class="coord-input-field" id="decLat" size=7 type="text" placeholder="гр" data-bind="textInput: decLat">
+                    <input class="coord-input-field" id="decLat" type="text" onfocus="(this.type='number')" onblur="(this.type='text')" placeholder="гр" data-bind="textInput: decLat">
                 </div>
                 <div class='inline-label'>
                     <label style="font-size: 2.0em">°</label>
@@ -130,7 +112,7 @@
                     <label style="font-size: 2.0em">долг.</label>
                 </div>
                 <div class="inline-input-dec">
-                    <input class="coord-input-field" id="decLon" size=7 type="text" placeholder="гр" data-bind="textInput: decLon">
+                    <input class="coord-input-field" id="decLon" size=7 type="text" onfocus="(this.type='number')" onblur="(this.type='text')" placeholder="гр" data-bind="textInput: decLon">
                 </div>
                 <div class='inline-label'>
                     <label style="font-size: 2.0em">°</label>
@@ -145,7 +127,6 @@
             </div>
         </div>
         <script src="lib/jquery-2.1.1.min.js" type="text/javascript"></script>
-        <script src="lib/jquery.numeric.min.js" type="text/javascript"></script>
         <script src="lib/knockout-3.2.0.js" type="text/javascript"></script>
         <script src="lib/geolib.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="cordova.js"></script>

@@ -23,7 +23,6 @@ function dmsToDec() {
     var dmsLonDeg = coordModel.dmsLonDeg() != undefined && coordModel.dmsLonDeg() != "" ? coordModel.dmsLonDeg() : 0;
     var dmsLonMin = coordModel.dmsLonMin() != undefined && coordModel.dmsLonMin() != "" ? coordModel.dmsLonMin() : 0;
     var dmsLonSec = coordModel.dmsLonSec() != undefined && coordModel.dmsLonSec() != "" ? coordModel.dmsLonSec() : 0;
-    console.log(dmsLatMin);
     
     var latChar = $.trim(btnLat.html());
     var lonChar = $.trim(btnLon.html());

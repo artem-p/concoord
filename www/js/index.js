@@ -8,6 +8,7 @@
 
 
 function onLoad() {
+	createModel();
     prepareGui();
     document.addEventListener("deviceready", onDeviceReady, false);
 }
